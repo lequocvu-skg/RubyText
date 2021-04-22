@@ -1,16 +1,16 @@
 import 'package:flutter/widgets.dart';
 
 WidgetSpan buildRubySpan(
-  String text, {
-  String? ruby,
-  required BuildContext context,
-  TextStyle? style,
-  TextStyle? rubyStyle,
-  GestureTapDownCallback? onTapDown,
-  GestureTapUpCallback? onTapUp,
-  GestureTapCallback? onTap,
-  GestureTapCancelCallback? onTapCancel,
-}) {
+    String text, {
+      String? ruby,
+      required BuildContext context,
+      TextStyle? style,
+      TextStyle? rubyStyle,
+      GestureTapDownCallback? onTapDown,
+      GestureTapUpCallback? onTapUp,
+      GestureTapCallback? onTap,
+      GestureTapCancelCallback? onTapCancel,
+    }) {
   final defaultTextStyle = DefaultTextStyle.of(context);
   var effectiveTextStyle = style;
   if (style == null || style.inherit) {
@@ -51,9 +51,9 @@ WidgetSpan buildRubySpan(
       effectiveRubyTextStyle = effectiveRubyTextStyle
           .merge(TextStyle(letterSpacing: newLetterSpacing));
     } else {
-      var newLetterSpacing = (rubyWidth - textWidth) / text.length;
-      effectiveTextStyle =
-          effectiveTextStyle.merge(TextStyle(letterSpacing: newLetterSpacing));
+      // var newLetterSpacing = (rubyWidth - textWidth) / text.length;
+      // effectiveTextStyle =
+      //     effectiveTextStyle.merge(TextStyle(letterSpacing: newLetterSpacing));
     }
   }
 
@@ -63,7 +63,7 @@ WidgetSpan buildRubySpan(
       Text(
         ruby,
         textAlign: TextAlign.center,
-        style: effectiveRubyTextStyle,
+        style: effectiveRubyTextStyle?.copyWith(fontSize: 10),
       ),
     );
   }
