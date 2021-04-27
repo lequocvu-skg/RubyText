@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 WidgetSpan buildRubySpan(
@@ -63,7 +64,7 @@ WidgetSpan buildRubySpan(
       Text(
         ruby,
         textAlign: TextAlign.center,
-        style: effectiveRubyTextStyle?.copyWith(fontSize: 10),
+        style: effectiveRubyTextStyle?.copyWith(fontSize: 8),
       ),
     );
   }
@@ -72,7 +73,7 @@ WidgetSpan buildRubySpan(
     Text(
       text,
       textAlign: TextAlign.center,
-      style: effectiveTextStyle,
+      style: effectiveTextStyle.copyWith(height: 1.3),
     ),
   );
 
